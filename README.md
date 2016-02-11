@@ -8,7 +8,7 @@ Dalam tutorial ini, akan diperkenalkan tentang bagaimana fitur route angularjs b
 ##Setup
 ###Tools
 Pada tutorial ini kita membutuhkan tools tambahan : 
-- NodeJS, download dari [situs resmi nodejs](https://nodejs.org/en/download/) dan install.
+- NodeJS, download dari [situs resmi nodejs](https://nodejs.org/en/download/) dan install. NodeJS hanya digunakan untuk menjalankan server http yg melayani file statis dalam tutorial ini.
 - HttpServer, server http serderhana untuk development, merupakan modul nodejs. Setelah nodejs terinstall, buka command prompt dan eksekusi ```npm install http-server```.
 
 ###Project
@@ -134,19 +134,20 @@ angular.module('tutorialApp')
 ```
 
 Selanjutnya kita buat parsial view (sangat sederhana, agar contoh kita tidak menjadi kompleks) dalam directory ```views/partials/```.
-1. ```list.html```
+
+File ```views/partials/list.html```
 ```html
 <h1>{{title}}</h1>
 <p>{{description}}</p>
 ```
 
-2. ```register.html```
+File ```views/partials/register.html```
 ```html
 <h1>{{title}}</h1>
 <p>{{description}}</p>
 ```
 
-3. ```detail.html```
+File ```views/partials/detail.html```
 ```html
 <h1>{{title}}</h1>
 <p>{{description}}</p>
