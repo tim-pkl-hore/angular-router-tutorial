@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample AngularJS Route</title>
+</head>
+<body ng-app="tutorialApp">
+    <nav>
+        <h3>Navigation</h3>
+        <hr>
+        <ul>
+            <li><a href="/#/">List Page</a></li>
+            <li><a href="/#/register">Register Page</a></li>
+            <li>
+                <p>Detail Page</p>
+                <ul>
+                    <li><a href="/#/detail/1">With id = 1</a></li>
+                    <li><a href="/#/detail/2">With id = 2</a></li>
+                    <li><a href="/#/detail/3">With id = 3</a></li>
+                    <li><a href="/#/detail/4">With id = 4</a></li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+    </nav>
+    
+    <!-- Di sini partial html akan dirender atau ditampilkan -->
+	<div ng-view></div>
+    
+	<script type="text/javascript" src="/scripts/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+	<script type="text/javascript">
+		// custom scripts.
+		'use strict';
+		
+		angular.module('tutorialApp', ['ngRoute']);
+        
+        angular.module('tutorialApp')
+            .config(function($routeProvider) {
+                // Configure route service.
+                $routeProvider.when('/', {
+                    templateUrl: '/views/partials/list.html',
+                    controller: 'ListCtrl'
+                }).when('/register', {
+                    templateUrl: '/views/partials/register.html',
+                    controller: 'RegisterCtrl'
+                }).when('/detail/:id', {
+                    templateUrl: '/views/partials/detail.html',
+                    controller: 'DetailCtrl',
+                    resolve: {
+                        'id': function($route) {
+                            return $route.current.params.id;
+                        }
+                    }
+                });
+            });
+            
+        angular.module('tutorialApp')
+            .controller('ListCtrl', function($scope, $log) {
+                $log.debug('Starting ListCtrl');
+                
+                $scope.title = "List Page";
+                $scope.description = "This page show list of items";
+            })
+            .controller('RegisterCtrl', function($scope, $log) {
+                $log.debug('Starting RegisterCtrl');
+                
+                $scope.title = "Register Page";
+                $scope.description = "This page show registration form";
+            })
+            .controller('DetailCtrl', function($scope, $log, id) {
+                $log.debug('Starting DetailCtrl');
+                
+                $scope.title = "Detail Page";
+                $scope.description = "This page show detail of item with id : " + id;
+            });
+	</script>
+</body>
+</html>
