@@ -14,6 +14,7 @@ http-server, server http serderhana untuk development, merupakan modul nodejs. S
 ```sh
 $ npm install -g http-server
 ```
+For more detail about ```http-server```, please refer [this page](https://www.npmjs.com/package/http-server).
 
 ###Project
 Fitur angular route tidak berada pada module core angular (yang telah digunakan pada tutorial sebelumnya). Oleh karena itu, sebelum memulai kita harus download terlebih dahulu
