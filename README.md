@@ -8,8 +8,12 @@ Dalam tutorial ini, akan diperkenalkan tentang bagaimana fitur route angularjs b
 ##Setup
 ###Tools
 Pada tutorial ini kita membutuhkan tools tambahan : 
-- NodeJS, download dari [situs resmi nodejs](https://nodejs.org/en/download/) dan install. NodeJS hanya digunakan untuk menjalankan server http yg melayani file statis dalam tutorial ini.
-- HttpServer, server http serderhana untuk development, merupakan modul nodejs. Setelah nodejs terinstall, buka command prompt dan eksekusi ```npm install http-server```.
+NodeJS, download dari [situs resmi nodejs](https://nodejs.org/en/download/) dan install. NodeJS hanya digunakan untuk menjalankan server http yg melayani file statis dalam tutorial ini.
+
+http-server, server http serderhana untuk development, merupakan modul nodejs. Setelah nodejs terinstall, buka command prompt dan eksekusi 
+```sh
+$ npm install -g http-server
+```
 
 ###Project
 Fitur angular route tidak berada pada module core angular (yang telah digunakan pada tutorial sebelumnya). Oleh karena itu, sebelum memulai kita harus download terlebih dahulu
@@ -153,9 +157,10 @@ File ```views/partials/detail.html```
 <p>{{description}}</p>
 ```
 
-Dari terminal atau _command prompt_, eksekusi command berikut ini
+Dari terminal atau _command prompt_, eksekusi command berikut ini (Sebelumnya, jangan lupa pindah di directory project dulu)
 ```sh
-http-server
+$ cd path/to/angular-router-tutorial
+$ http-server
 ```
 
 Buka browser dan ketik ```http://localhost:8080``` pada address bar
